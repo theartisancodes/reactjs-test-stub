@@ -1,0 +1,21 @@
+@use 'sass:map';
+
+@mixin breakpoint($screen, $type: min) {
+  $screen_sizes: (
+    'sm': '640px',
+    'md': '768px',
+    'lg': '1024px',
+    'xl': '1280px',
+    '2xl': '1536px',
+  );
+
+  @if $type == min {
+    @media (min-width: map.get($screen_sizes, $screen)) {
+      @content;
+    }
+  } @else if $type == max {
+    @media (max-width: map.get($screen_sizes, $screen)) {
+      @content;
+    }
+  }
+}

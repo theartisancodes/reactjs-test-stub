@@ -1,0 +1,9 @@
+@use '../../styles/colors' as c;
+
+.highlight {
+  background-color: c.$secondary_kale;
+  border-radius: 6px;
+  color: c.$neutral_white;
+  font-weight: 600;
+  padding: 2px 4px;
+}

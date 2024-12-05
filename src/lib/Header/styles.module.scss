@@ -1,0 +1,29 @@
+@use '../../styles/colors' as c;
+@use '../../styles/mixins.scss' as mixins;
+.header {
+  align-items: center;
+  background-color: c.$neutral-white;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  display: flex;
+  display: flex;
+  flex-basis: 80%;
+  gap: 24px;
+  height: 60px;
+  justify-content: flex-end;
+  padding: 0 16px;
+  position: sticky;
+  top: 0;
+  width: 100%;
+  z-index: 100;
+
+  @include mixins.breakpoint('md', min) {
+    height: 60px;
+    padding: 0 16px;
+  }
+
+  @include mixins.breakpoint('lg', min) {
+    height: 60px;
+    padding: 0 16px;
+  }
+}

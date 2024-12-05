@@ -1,0 +1,39 @@
+@use '../../styles/colors.scss' as c;
+
+@use '../../styles/mixins.scss' as mixins;
+
+.container {
+  background: c.$neutral_lightest_black;
+  bottom: 0;
+  color: c.$neutral_dark_black;
+  display: flex;
+  left: 0;
+  position: fixed;
+  top: 0;
+  width: 100%;
+
+  nav {
+    align-items: center;
+    background: linear-gradient(195deg, rgb(66, 66, 74), rgb(25, 25, 25));
+    border-radius: 16px;
+    box-shadow: rgba(0, 0, 0, 0.05) 0rem 1.25rem 1.6875rem 0rem;
+    color: c.$neutral_white;
+    display: flex;
+    flex-direction: column;
+    height: 96%;
+    margin: 16px 0 16px 16px;
+    padding: 16px;
+    position: relative;
+    width: 240px;
+    @include mixins.breakpoint('md', max) {
+      display: none;
+    }
+  }
+  main {
+    display: flex;
+    height: 100%;
+    overflow-y: auto;
+    padding-left: 16px;
+    width: 100%;
+  }
+}

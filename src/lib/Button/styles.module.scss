@@ -1,0 +1,107 @@
+@use '../../styles/colors.scss' as *;
+
+.button {
+  align-items: center;
+  border: 0;
+  border-radius: 12px;
+  display: flex;
+  font-size: 14px;
+  gap: 12px;
+  height: 42px;
+  justify-content: center;
+  margin: 0;
+  padding: 0 16px;
+  transition: all 0.3s;
+
+  &--primary {
+    @extend .button;
+    background: linear-gradient(
+      195deg,
+      $primary_light_material,
+      $primary_material
+    );
+    color: $neutral_white;
+    text-decoration: none;
+    &:hover {
+      color: $neutral_white;
+    }
+  }
+
+  &--secondary {
+    @extend .button;
+    background-color: $neutral_white;
+    border: 1px solid $primary_emerald;
+    color: $primary_emerald;
+
+    &:hover {
+      background-color: $primary_emerald;
+      border: 1px solid $primary_emerald;
+      color: $neutral_white;
+    }
+
+    &:disabled {
+      border: 1px solid $neutral_lighter_black;
+      color: $neutral_dark_black;
+    }
+  }
+
+  &--onlyText {
+    @extend .button;
+    background-color: transparent;
+    border: 1px solid $neutral_light_black;
+    color: $neutral_white;
+
+    &:hover {
+      border-color: $primary_material;
+    }
+  }
+
+  &--link {
+    @extend .button;
+    background-color: transparent;
+    color: $accent_blue;
+    padding: 0;
+
+    &:hover {
+      color: $accent_blue_dark;
+    }
+  }
+
+  &--danger {
+    @extend .button;
+    background-color: $danger_danger;
+    color: #fff;
+
+    &:hover {
+      background-color: $support_error_dark;
+    }
+  }
+  &--neutral {
+    @extend .button;
+    background-color: $neutral_white;
+    border: 1px solid $neutral_white;
+    color: $neutral_dark_black;
+    display: flex;
+
+    &:hover {
+      background: 1px solid $neutral_lightest_black;
+      color: $neutral_dark_black;
+    }
+  }
+
+  &--small {
+    height: 32px;
+  }
+
+  &--full {
+    width: 100%;
+  }
+
+  &:hover {
+    filter: brightness(0.8);
+  }
+
+  &:focus {
+    outline: transparent;
+  }
+}

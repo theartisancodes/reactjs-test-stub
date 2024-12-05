@@ -1,0 +1,38 @@
+@use '../../styles/colors.scss' as c;
+@use '../../styles/typography.scss' as t;
+@use '../../styles/mixins.scss' as mixins;
+
+.container {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 0 auto;
+  margin-top: 24px;
+  max-width: 1200px;
+  min-width: 500px;
+  width: calc(100vw - 500px);
+  @include mixins.breakpoint('md', max) {
+    min-width: unset;
+    width: calc(100vw - 50px);
+  }
+
+  h1 {
+    @include t.typography('heading', 'h3', 'semibold');
+    margin-bottom: 12px;
+  }
+}
+
+.buttonContainer {
+  display: flex;
+  gap: 12px;
+  justify-content: flex-end;
+  padding-top: 16px;
+}
+
+.bpmnContainer {
+  border: 1px solid c.$neutral_light_black;
+  border-radius: 8px;
+  height: 500px;
+  width: 100%;
+}

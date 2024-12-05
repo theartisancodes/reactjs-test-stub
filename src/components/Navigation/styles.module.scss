@@ -1,0 +1,28 @@
+@use '../../styles/typography.scss' as t;
+@use '../../styles/colors.scss' as c;
+.container {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+
+  .navigation {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    padding: 24px;
+
+    button {
+      align-items: center;
+      display: flex;
+      gap: 8px;
+      justify-content: flex-start;
+      width: 200px;
+      @include t.typography('body', 'sm', 'regular');
+    }
+  }
+  .icon {
+    display: flex;
+    margin-top: 5px;
+  }
+}

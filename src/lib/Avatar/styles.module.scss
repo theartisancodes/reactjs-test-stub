@@ -1,0 +1,29 @@
+@use '../../styles/colors.scss' as c;
+@use '../../styles/typography.scss' as t;
+@use '../../styles/mixins.scss' as mixins;
+
+.avatar {
+  border-radius: 50%;
+  cursor: pointer;
+  object-fit: cover;
+  @include mixins.breakpoint('sm', min) {
+    font-size: 20px;
+    height: 50px;
+    width: 50px;
+  }
+}
+
+.avatarPlaceholder {
+  align-items: center;
+  background-color: c.$secondary_dark_kale;
+  border-radius: 50%;
+  color: c.$neutral_white;
+  display: flex;
+  justify-content: center;
+}
+
+.avatarText {
+  span {
+    @include t.typography('body', 'sm', 'bold');
+  }
+}

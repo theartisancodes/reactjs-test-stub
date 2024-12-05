@@ -1,0 +1,11 @@
+@use '../../styles/typography.scss' as t;
+
+.container {
+  display: flex;
+  flex-direction: column;
+  h1 {
+    @include t.typography('heading', 'h1', 'semibold');
+    font-size: 24px;
+    margin: 24px 0 0 12px;
+  }
+}

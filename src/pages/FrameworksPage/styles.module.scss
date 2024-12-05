@@ -1,0 +1,124 @@
+@use '../../styles/typography.scss' as t;
+@use '../../styles/colors' as c;
+
+@use '../../styles/mixins.scss' as mixins;
+
+.frameworksContainer {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+  justify-content: center;
+  overflow-y: auto;
+  padding: 24px;
+
+  .notFound {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    justify-content: center;
+    position: fixed;
+    top: 30%;
+
+    img {
+      fill: c.$primary_material;
+      height: 64px;
+      width: 64px;
+    }
+
+    label {
+      @include t.typography('body', 'h3', 'semibold');
+      color: c.$neutral_dark_black;
+    }
+
+    span {
+      color: c.$neutral_black;
+      max-width: 600px;
+      padding: 0 16px;
+      text-align: center;
+      word-wrap: break-word;
+      @include t.typography('body', 'lg', 'medium');
+
+      @include mixins.breakpoint('sm', max) {
+        max-width: 80%;
+      }
+    }
+  }
+}
+
+.cardContainer {
+  display: flex;
+}
+
+.card {
+  background-color: c.$neutral_white;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  justify-content: flex-start;
+  min-height: 200px;
+  padding: 16px;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+  width: 300px;
+
+  &:hover {
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    transform: translateY(-8px);
+  }
+
+  .headerContainer {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 8px;
+
+    .iconContainer {
+      align-items: center;
+      background-color: c.$black;
+      border-radius: 12px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+      display: flex;
+      height: 50px;
+      justify-content: center;
+      margin-top: -30px;
+      width: 50px;
+
+      svg {
+        fill: c.$neutral_white;
+        height: 32px;
+        width: 32px;
+      }
+    }
+
+    header {
+      @include t.typography('body', 'base', 'semibold');
+      color: c.$primary_emerald;
+      margin-left: auto;
+      text-align: right;
+    }
+  }
+
+  p {
+    -webkit-box-orient: vertical;
+    color: c.$neutral_dark_black;
+    display: -webkit-box;
+    font-size: 14px;
+    -webkit-line-clamp: 5;
+    line-height: 20px;
+    margin-top: 4px;
+    overflow: hidden;
+    padding: 0 8px;
+    text-align: justify;
+    text-justify: inter-word;
+    transition: -webkit-line-clamp 0.3s ease;
+    &:hover {
+      -webkit-line-clamp: unset;
+      overflow: visible;
+    }
+  }
+}
